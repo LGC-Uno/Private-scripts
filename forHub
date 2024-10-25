@@ -1,0 +1,45 @@
+-- There will be 2 guis of anti-afk for make sure you won't be kicked! (you can only get kicked by your wifi connection or another reason)
+-- This script will make a platform under local player, and will make teleport local player to a random pos (you can change it down here)
+local minX, maxX = 1000, 2000
+local minY, maxY = 1900, 3000
+local minZ, maxZ = 1000, 2000
+
+local rootPartt = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+local teleportInterval = 0.4
+
+local function teleportPlayer()
+    local player = game.Players.LocalPlayer
+    if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+        local rootParttt = player.Character.HumanoidRootPart
+
+        local randomX = math.random(minX, maxX)
+        local randomY = math.random(minY, maxY)
+        local randomZ = math.random(minZ, maxZ)
+
+        rootParttt.CFrame = CFrame.new(randomX, randomY, randomZ)
+    end
+end
+
+
+local function float()
+    local pchar = game.Players.LocalPlayer.Character
+    local floatName = randomString()
+	if pchar and not pchar:FindFirstChild(floatName) then
+        local Float = Instance.new('Part')
+        Float.Name = floatName
+        Float.Parent = pchar
+        Float.Transparency = 1
+        Float.Size = Vector3.new(2,0.2,1.5)
+        Float.Anchored = true
+        local FloatValue = -3.1
+        Float.CFrame = getRoot(pchar).CFrame * CFrame.new(0,FloatValue,0)
+    end
+end
+
+
+while true do
+    teleportPlayer()
+    float()
+    wait(teleportInterval)
+end
