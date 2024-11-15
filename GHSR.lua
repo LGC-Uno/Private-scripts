@@ -773,7 +773,7 @@ ServerPlayer = Tab:AddLabel("Player In Server [ "..#game.Players:GetPlayers().."
 TimeServer = Tab:AddLabel("Server Time [ "..math.floor(workspace.DistributedGameTime / 60 / 60).." Hour | "..math.floor(workspace.DistributedGameTime / 60) - (math.floor(workspace.DistributedGameTime / 60 / 60) * 60).." Minute | "..math.floor(workspace.DistributedGameTime) - (math.floor(workspace.DistributedGameTime / 60) * 60).." Second ]")
 TimeNow = Tab:AddLabel("Now Time [ "..os.date("%X").." ]")
 AgeAccYou = Tab:AddLabel("You Account Age [ "..game.Players.LocalPlayer.AccountAge.." ]")
-ViewAgeServer = Tab:AddLabel("Server's Age [ "..game.Workspace.Lobby.ServerAge.Text.SurfaceGui.TextLabel.Text.." ]")
+ViewAgeServer = Tab:AddLabel("Server's Age [ "..workspace.Lobby.Decoration.Model.Text.SurfaceGui.TextLabel.Text.." ]")
 CodeKeypad = Tab:AddLabel("Code Keypad [ "..tostring((#game.Players:GetPlayers()) * 25 + 1100 - 7).." ]")
 if not game.Workspace:FindFirstChild("Keypad") then
 KeypadSpawn = Tab:AddLabel("Keypad Spawn [ No ]")
@@ -823,7 +823,6 @@ AutoSetInfo = Tab:AddToggle({
                 CanYouPing:Set("Your Ping [ "..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString().." ]")
                 AgeAccYou:Set("Your Account Age [ "..game.Players.LocalPlayer.AccountAge.." ]")
                 TimeNow:Set("Now Time [ "..os.date("%X").." ]")
-                ViewAgeServer:Set("Server's Age [ "..game.Workspace.Lobby.ServerAge.Text.SurfaceGui.TextLabel.Text.." ]")
                 PlateTime:Set("Plate Time [ "..game.Players.LocalPlayer.PlayerGui.PlateIndicator.TextLabel.Text.." ]")
             end
             PositionYou:Set("Position In You [ "..tostring(math.round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X)..", ".. math.round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y)..", "..math.round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z)).." ]")
@@ -2962,7 +2961,7 @@ Tab14:AddButton({
 if _G.PlayerChoose == "Username" then
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Recall" and game.Players.LocalPlayer.Character:FindFirstChild("Recall") and game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players[PlayerKickRecall].Character:FindFirstChild("entered") and game.Players[PlayerKickRecall].Character:FindFirstChild("HumanoidRootPart") then
 OGL = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
 v.CanTouch = false
 end
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-725,310,-2)
@@ -2972,7 +2971,7 @@ wait(2.7)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[PlayerKickRecall].Character.HumanoidRootPart.CFrame
 task.wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OGL
-for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
 v.CanTouch = true
 end
 else
@@ -2981,7 +2980,7 @@ end
 elseif _G.PlayerChoose == "Random" then
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Recall" and game.Players.LocalPlayer.Character:FindFirstChild("Recall") and game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players[PlayerKick].Character:FindFirstChild("entered") and game.Players[PlayerKick].Character:FindFirstChild("HumanoidRootPart") then
 OGL = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
 v.CanTouch = false
 end
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-725,310,-2)
@@ -2995,7 +2994,7 @@ Target = randomPlayer
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Target.Character.HumanoidRootPart.CFrame
 task.wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OGL
-for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
 v.CanTouch = true
 end
 else
@@ -3413,7 +3412,7 @@ if game.Players.LocalPlayer.leaderstats.Glove.Value == "Za Hando" then
 OGWS = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
 OGJP = game.Players.LocalPlayer.Character.Humanoid.JumpPower
 OGL = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
 v.CanTouch = false
 end
 game:GetService("ReplicatedStorage").Erase:FireServer()
@@ -3425,7 +3424,7 @@ wait(3.75)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OGL
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = OGWS
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = OGJP
-for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
 v.CanTouch = true
 end
 else
@@ -4653,7 +4652,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-800,328
 elseif Value == "Hunter Room" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.BountyHunterRoom.Union.CFrame * CFrame.new(0,5,0)
 elseif Value == "Brazil" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Lobby.brazil.portal.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Lobby.Decoration.brazil.portal.CFrame
 elseif Value == "Island Slapple" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Arena.island5.Union.CFrame * CFrame.new(0,3.25,0)
 elseif Value == "Plate" then
@@ -7195,7 +7194,7 @@ AntiJack = Tab2:AddToggle({
 	Name = "Anti Hallow - Jack",
 	Default = false,
 	Callback = function(Value)
-game.Players.LocalPlayer.PlayerScripts.HallowJackAbilities.Disabled = Value
+game.Players.LocalPlayer.PlayerScripts.LegacyClient.HallowJackAbilities.Disabled = Value
 	end    
 })
 
@@ -7236,19 +7235,7 @@ AntiConveyor = Tab2:AddToggle({
 	Name = "Anti Conveyor",
 	Default = false,
 	Callback = function(Value)
-game.Players.LocalPlayer.PlayerScripts.ConveyorVictimized.Disabled = Value
-	end    
-})
-
-AntiNightmareAndPotion = Tab2:AddToggle({
-	Name = "Anti Nightmare & Potion",
-	Default = false,
-	Callback = function(Value)
-        if Value == true then
-        game.Players.LocalPlayer.PlayerScripts.VFXListener.NightmareEffect.Parent = game.Lighting
-    else
-        game.Players.LocalPlayer.PlayerScripts.VFXListener.NightmareEffect.Parent = game.Players.LocalPlayer.PlayerScripts.VFXListener
-    end
+game.Players.LocalPlayer.PlayerScripts.LegacyClient.ConveyorVictimized.Disabled = Value
 	end    
 })
 
@@ -7382,7 +7369,7 @@ AntiReda = Tab2:AddToggle({
 	Name = "Anti [REDACTED]",
 	Default = false,
 	Callback = function(Value)
-game.Players.LocalPlayer.PlayerScripts.Well.Disabled = Value
+game.Players.LocalPlayer.PlayerScripts.LegacyClient.Well.Disabled = Value
 	end    
 })
 
@@ -7392,7 +7379,7 @@ AntiBrazil = Tab2:AddToggle({
 	Callback = function(Value)
 _G.AntiBrazil = Value
 while _G.AntiBrazil do
-for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
                   if v.CanTouch == true then
                      v.CanTouch = false
                  end
@@ -7400,7 +7387,7 @@ for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
 task.wait()
 end
 if _G.AntiBrazil == false then
-for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
                   if v.CanTouch == false then
                      v.CanTouch = true
                  end
@@ -8163,7 +8150,7 @@ ServerPlayer = Tab:AddLabel("Player In Server [ "..#game.Players:GetPlayers().."
 TimeServer = Tab:AddLabel("Server Time [ "..math.floor(workspace.DistributedGameTime / 60 / 60).." Hour | "..math.floor(workspace.DistributedGameTime / 60) - (math.floor(workspace.DistributedGameTime / 60 / 60) * 60).." Minute | "..math.floor(workspace.DistributedGameTime) - (math.floor(workspace.DistributedGameTime / 60) * 60).." Second ]")
 TimeNow = Tab:AddLabel("Now Time [ "..os.date("%X").." ]")
 AgeAccYou = Tab:AddLabel("You Account Age [ "..game.Players.LocalPlayer.AccountAge.." ]")
-ViewAgeServer = Tab:AddLabel("Server's Age [ "..game.Workspace.Lobby.ServerAge.Text.SurfaceGui.TextLabel.Text.." ]")
+ViewAgeServer = Tab:AddLabel("Server's Age [ "..workspace.Lobby.Decoration.Model.Text.SurfaceGui.TextLabel.." ]")
 if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
 ResetTime = Tab:AddLabel("Time Spawn [ "..game.Players.RespawnTime.." ]")
 else
@@ -8213,7 +8200,7 @@ TimeServer:Set("Server Time [ "..math.floor(workspace.DistributedGameTime / 60 /
 CanYouPing:Set("Your Ping [ "..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString().." ]")
 AgeAccYou:Set("Your Account Age [ "..game.Players.LocalPlayer.AccountAge.." ]")
 TimeNow:Set("Now Time [ "..os.date("%X").." ]")
-ViewAgeServer:Set("Server's Age [ "..game.Workspace.Lobby.ServerAge.Text.SurfaceGui.TextLabel.Text.." ]")
+ViewAgeServer:Set("Server's Age [ "..workspace.Lobby.Decoration.Model.Text.SurfaceGui.TextLabel.." ]")
 PlateTime:Set("Plate Time [ "..game.Players.LocalPlayer.PlayerGui.PlateIndicator.TextLabel.Text.." ]")
 if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
 ResetTime:Set("Time Spawn [ "..game.Players.RespawnTime.." ]")
@@ -9038,7 +9025,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-800,328
 elseif Value == "Hunter Room" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.BountyHunterRoom.Union.CFrame * CFrame.new(0,5,0)
 elseif Value == "Brazil" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Lobby.brazil.portal.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Lobby.Decoration.brazil.portal.CFrame
 elseif Value == "Island Slapple" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Arena.island5.Union.CFrame * CFrame.new(0,3.25,0)
 elseif Value == "Plate" then
@@ -9675,7 +9662,7 @@ AntiBrazil = Tab2:AddToggle({
 	Callback = function(Value)
 _G.AntiBrazil = Value
 while _G.AntiBrazil do
-for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
                   if v.CanTouch == true then
                      v.CanTouch = false
                  end
@@ -9683,7 +9670,7 @@ for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
 task.wait()
 end
 if _G.AntiBrazil == false then
-for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
                   if v.CanTouch == false then
                      v.CanTouch = true
                  end
