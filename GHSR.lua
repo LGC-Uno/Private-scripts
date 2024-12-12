@@ -773,7 +773,6 @@ ServerPlayer = Tab:AddLabel("Player In Server [ "..#game.Players:GetPlayers().."
 TimeServer = Tab:AddLabel("Server Time [ "..math.floor(workspace.DistributedGameTime / 60 / 60).." Hour | "..math.floor(workspace.DistributedGameTime / 60) - (math.floor(workspace.DistributedGameTime / 60 / 60) * 60).." Minute | "..math.floor(workspace.DistributedGameTime) - (math.floor(workspace.DistributedGameTime / 60) * 60).." Second ]")
 TimeNow = Tab:AddLabel("Now Time [ "..os.date("%X").." ]")
 AgeAccYou = Tab:AddLabel("You Account Age [ "..game.Players.LocalPlayer.AccountAge.." ]")
-ViewAgeServer = Tab:AddLabel("Server's Age [ "..workspace.Lobby.Decoration.Model.Text.SurfaceGui.TextLabel.Text.." ]")
 CodeKeypad = Tab:AddLabel("Code Keypad [ "..tostring((#game.Players:GetPlayers()) * 25 + 1100 - 7).." ]")
 if not game.Workspace:FindFirstChild("Keypad") then
 KeypadSpawn = Tab:AddLabel("Keypad Spawn [ No ]")
@@ -2955,54 +2954,7 @@ end
 	end	  
 })
 
-Tab14:AddButton({
-	Name = "Kick Player Recall",
-	Callback = function()
-if _G.PlayerChoose == "Username" then
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "Recall" and game.Players.LocalPlayer.Character:FindFirstChild("Recall") and game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players[PlayerKickRecall].Character:FindFirstChild("entered") and game.Players[PlayerKickRecall].Character:FindFirstChild("HumanoidRootPart") then
-OGL = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
-v.CanTouch = false
-end
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-725,310,-2)
-task.wait(0.25)
-game:GetService("ReplicatedStorage").Recall:InvokeServer(game:GetService("Players").LocalPlayer.Character.Recall)
-wait(2.7)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[PlayerKickRecall].Character.HumanoidRootPart.CFrame
-task.wait(1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OGL
-for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
-v.CanTouch = true
-end
-else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Recall equipped, or you have Backpack Recall equipped, or player not enter arena",Image = "rbxassetid://7733658504",Time = 5})
-end
-elseif _G.PlayerChoose == "Random" then
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "Recall" and game.Players.LocalPlayer.Character:FindFirstChild("Recall") and game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players[PlayerKick].Character:FindFirstChild("entered") and game.Players[PlayerKick].Character:FindFirstChild("HumanoidRootPart") then
-OGL = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
-v.CanTouch = false
-end
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-725,310,-2)
-task.wait(0.25)
-game:GetService("ReplicatedStorage").Recall:InvokeServer(game:GetService("Players").LocalPlayer.Character.Recall)
-wait(2.7)
-local players = game.Players:GetChildren()
-local randomPlayer = players[math.random(1, #players)]
-repeat randomPlayer = players[math.random(1, #players)] until randomPlayer ~= game.Players.LocalPlayer and randomPlayer.Character:FindFirstChild("entered") and randomPlayer.Character:FindFirstChild("ded") == nil and randomPlayer.Character:FindFirstChild("InLabyrinth") == nil and randomPlayer.Character:FindFirstChild("rock") == nil
-Target = randomPlayer
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Target.Character.HumanoidRootPart.CFrame
-task.wait(1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OGL
-for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
-v.CanTouch = true
-end
-else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Recall equipped, or you have Backpack Recall equipped, or player not enter arena",Image = "rbxassetid://7733658504",Time = 5})
-end
-end
-  	end    
-})
+
 
 Tab14:AddToggle({
 	Name = "Auto Sbeve All Player",
