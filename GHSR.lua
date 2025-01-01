@@ -3364,7 +3364,7 @@ if game.Players.LocalPlayer.leaderstats.Glove.Value == "Za Hando" then
 OGWS = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
 OGJP = game.Players.LocalPlayer.Character.Humanoid.JumpPower
 OGL = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
 v.CanTouch = false
 end
 game:GetService("ReplicatedStorage").Erase:FireServer()
@@ -3376,7 +3376,7 @@ wait(3.75)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OGL
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = OGWS
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = OGJP
-for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
 v.CanTouch = true
 end
 else
@@ -4604,7 +4604,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-800,328
 elseif Value == "Hunter Room" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.BountyHunterRoom.Union.CFrame * CFrame.new(0,5,0)
 elseif Value == "Brazil" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Lobby.Decoration.brazil.portal.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Lobby.brazil.portal.CFrame
 elseif Value == "Island Slapple" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Arena.island5.Union.CFrame * CFrame.new(0,3.25,0)
 elseif Value == "Plate" then
@@ -7331,7 +7331,7 @@ AntiBrazil = Tab2:AddToggle({
 	Callback = function(Value)
 _G.AntiBrazil = Value
 while _G.AntiBrazil do
-for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
                   if v.CanTouch == true then
                      v.CanTouch = false
                  end
@@ -7339,7 +7339,7 @@ for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
 task.wait()
 end
 if _G.AntiBrazil == false then
-for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
                   if v.CanTouch == false then
                      v.CanTouch = true
                  end
@@ -8977,7 +8977,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-800,328
 elseif Value == "Hunter Room" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.BountyHunterRoom.Union.CFrame * CFrame.new(0,5,0)
 elseif Value == "Brazil" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Lobby.Decoration.brazil.portal.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Lobby.brazil.portal.CFrame
 elseif Value == "Island Slapple" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Arena.island5.Union.CFrame * CFrame.new(0,3.25,0)
 elseif Value == "Plate" then
@@ -9614,7 +9614,7 @@ AntiBrazil = Tab2:AddToggle({
 	Callback = function(Value)
 _G.AntiBrazil = Value
 while _G.AntiBrazil do
-for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
                   if v.CanTouch == true then
                      v.CanTouch = false
                  end
@@ -9622,7 +9622,7 @@ for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
 task.wait()
 end
 if _G.AntiBrazil == false then
-for i,v in pairs(game.Workspace.Lobby.Decoration.brazil:GetChildren()) do
+for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
                   if v.CanTouch == false then
                      v.CanTouch = true
                  end
